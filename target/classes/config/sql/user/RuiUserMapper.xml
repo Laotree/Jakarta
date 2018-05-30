@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="1.mapper.RuiUserMapper">
+
+	<resultMap id="BaseResultMap" type="com.boot.model.po.RuiUserPO">
+		    <result column="id" property="id" />
+		    <result column="user_name" property="userName" />
+		    <result column="nickname" property="nickname" />
+		    <result column="user_psw" property="userPsw" />
+		    <result column="user_status" property="userStatus" />
+		    <result column="is_delete" property="isDelete" />
+		    <result column="create_time" property="createTime" />
+		    <result column="update_time" property="updateTime" />
+		    <result column="create_by" property="createBy" />
+		    <result column="update_by" property="updateBy" />
+	</resultMap>
+	
+	<sql id="select_content">	
+				<if test="e.id != null and e.id != '' ">
+					AND t.ID = #{e.id}
+				</if>
+				<if test="e.userName != null and e.userName != '' ">
+					AND t.USER_NAME = #{e.userName}
+				</if>
+				<if test="e.nickname != null and e.nickname != '' ">
+					AND t.NICKNAME = #{e.nickname}
+				</if>
+				<if test="e.userPsw != null and e.userPsw != '' ">
+					AND t.USER_PSW = #{e.userPsw}
+				</if>
+				<if test="e.userStatus != null and e.userStatus != '' ">
+					AND t.USER_STATUS = #{e.userStatus}
+				</if>
+				<if test="e.isDelete != null and e.isDelete != '' ">
+					AND t.IS_DELETE = #{e.isDelete}
+				</if>
+				<if test="e.createTime != null and e.createTime != '' ">
+					AND t.CREATE_TIME = #{e.createTime}
+				</if>
+				<if test="e.updateTime != null and e.updateTime != '' ">
+					AND t.UPDATE_TIME = #{e.updateTime}
+				</if>
+				<if test="e.createBy != null and e.createBy != '' ">
+					AND t.CREATE_BY = #{e.createBy}
+				</if>
+				<if test="e.updateBy != null and e.updateBy != '' ">
+					AND t.UPDATE_BY = #{e.updateBy}
+				</if>
+	</sql>
+
+</mapper>
